@@ -35,13 +35,11 @@ app.post('/sendValue',(req,res)=>{
     };
     js.push(val);
     let val1=JSON.stringify(js);
+    //callback.....
     fs.writeFile("./data.json",val1,"utf-8",(error)=>{
         res.send(val);
-    }); 
+    });
 });
-
-
-
 app.listen(port,()=>{
     console.log(`node is runnning ${port}`);
 })
